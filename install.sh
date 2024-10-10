@@ -62,10 +62,14 @@ mac_address=$(printf '%016s' "$mac_address" | tr ' ' '0')
 echo "MAC Address formatado: $mac_address"
 
 # Procura a pasta lora_pkt_fwd
+echo "Procurando a pasta lora_pkt_fwd..."
 lora_pkt_fwd_dir=$(find "$hal_dir" -type d -name "lora_pkt_fwd" 2>/dev/null)
 
 if [ -z "$lora_pkt_fwd_dir" ]; then
   echo "Erro: Diretório lora_pkt_fwd não encontrado." >&2
+  # Listar subdiretórios em $hal_dir para depuração
+  echo "Conteúdo do diretório $hal_dir:"
+  ls -l "$hal_dir"
   exit 1
 else
   echo "Diretório lora_pkt_fwd encontrado: $lora_pkt_fwd_dir"
