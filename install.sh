@@ -135,4 +135,7 @@ apt autoremove -y
 echo "Limpando arquivos de pacotes desnecessários..."
 apt clean
 
+# Exibe o MAC Address formatado em verde no final
+echo -e "\n\033[32mGATEWAY EUI: $mac_address\033[0m"
+
 echo "Script concluído com sucesso."
