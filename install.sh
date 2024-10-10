@@ -61,22 +61,22 @@ mac_address=$(printf '%016s' "$mac_address" | tr ' ' '0')
 # Printa o MAC address ajustado
 echo "MAC Address formatado: $mac_address"
 
-# Procura a pasta lora_pkt_fwd
-echo "Procurando a pasta lora_pkt_fwd..."
-lora_pkt_fwd_dir=$(find "$hal_dir" -type d -name "lora_pkt_fwd" 2>/dev/null)
+# Procura a pasta packet_forwarder
+echo "Procurando a pasta packet_forwarder..."
+packet_forwarder_dir=$(find "$hal_dir" -type d -name "packet_forwarder" 2>/dev/null)
 
-if [ -z "$lora_pkt_fwd_dir" ]; then
-  echo "Erro: Diretório lora_pkt_fwd não encontrado." >&2
+if [ -z "$packet_forwarder_dir" ]; then
+  echo "Erro: Diretório packet_forwarder não encontrado." >&2
   # Listar subdiretórios em $hal_dir para depuração
   echo "Conteúdo do diretório $hal_dir:"
   ls -l "$hal_dir"
   exit 1
 else
-  echo "Diretório lora_pkt_fwd encontrado: $lora_pkt_fwd_dir"
+  echo "Diretório packet_forwarder encontrado: $packet_forwarder_dir"
 fi
 
 # Localiza o arquivo global_conf.json.sx1250.US915
-conf_file="$lora_pkt_fwd_dir/global_conf.json.sx1250.US915"
+conf_file="$packet_forwarder_dir/global_conf.json.sx1250.US915"
 
 if [ ! -f "$conf_file" ]; then
   echo "Erro: Arquivo $conf_file não encontrado." >&2
@@ -106,8 +106,8 @@ After=network.target
 
 [Service]
 User=$(whoami)
-WorkingDirectory=$lora_pkt_fwd_dir
-ExecStart=$lora_pkt_fwd_dir/lora_pkt_fwd
+WorkingDirectory=$packet_forwarder_dir
+ExecStart=$packet_forwarder_dir/lora_pkt_fwd
 Restart=always
 RestartSec=10
 
