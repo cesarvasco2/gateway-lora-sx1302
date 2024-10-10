@@ -75,6 +75,9 @@ else
   echo "Diretório packet_forwarder encontrado: $packet_forwarder_dir"
 fi
 
+# Navega para o diretório do packet_forwarder
+cd "$packet_forwarder_dir" || { echo "Erro: Não foi possível entrar no diretório packet_forwarder."; exit 1; }
+
 # Localiza o arquivo global_conf.json.sx1250.US915
 conf_file="$packet_forwarder_dir/global_conf.json.sx1250.US915"
 
@@ -82,9 +85,6 @@ if [ ! -f "$conf_file" ]; then
   echo "Erro: Arquivo $conf_file não encontrado." >&2
   exit 1
 fi
-
-# Navega para o diretório do packet_forwarder
-cd ~/LR1302_loraWAN/LR1302_HAL/sx1302_hal/packet_forwarder || { echo "Erro: Diretório packet_forwarder não encontrado."; exit 1; }
 
 # Cria o arquivo global_conf.json com as configurações desejadas
 conf_file="global_conf.json"
