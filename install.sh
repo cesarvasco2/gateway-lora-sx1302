@@ -86,6 +86,9 @@ if [ ! -f "$conf_file" ]; then
   exit 1
 fi
 
+# Torna o script reset_lgw.sh executável
+chmod +x reset_lgw.sh
+
 # Cria o arquivo global_conf.json com as configurações desejadas
 conf_file="global_conf.json"
 {
@@ -174,7 +177,7 @@ conf_file="global_conf.json"
     echo "        \"forward_crc_valid\": true,"
     echo "        \"forward_crc_error\": false,"
     echo "        \"forward_crc_disabled\": false,"
-    echo "        \"gps_tty_path\": \"/dev/ttyS\","
+    echo "        \"gps_tty_path\": \"/dev/ttyS0\","
     echo "        \"ref_latitude\": 0.0,"
     echo "        \"ref_longitude\": 0.0,"
     echo "        \"ref_altitude\": 0,"
