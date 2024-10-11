@@ -4,9 +4,10 @@ Este script foi desenvolvido e testado em um Raspberry Pi 3B+ rodando **Debian B
 
 ## Requisitos
 
-- Raspberry Pi 3B+ com **Debian Bullseye**
+- Raspberry Pi 3B+ ou compativel
+- Sistema operacional **Debian Bullseye** (não testado com **Debian “bookworm”**)
 - Conexão com a internet
-- HAT e modulo concentrador Elecrow LR1302 LoRaWAN Gateway Module
+- HAT e modulo concentrador Elecrow LR1302 LoRaWAN (SPI)
 
 ## Instruções de Instalação
 
