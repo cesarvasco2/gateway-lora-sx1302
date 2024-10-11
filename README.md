@@ -23,7 +23,7 @@ sudo apt install git -y
 ### Passo 2: Clonar o Repositório
 
 ```bash
-git clone [https://github.com/seu_usuario/lora_pkt_fwd_setup.git](https://github.com/cesarvasco2/gateway-lora-sx1302.git)
+git clone https://github.com/cesarvasco2/gateway-lora-sx1302.git
 ```
 ### Passo 3: Executar o Script de Instalação
 
