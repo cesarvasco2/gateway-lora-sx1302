@@ -1,0 +1,52 @@
+# LoRa Packet Forwarder Setup
+
+Este script foi desenvolvido e testado em um Raspberry Pi 3B+ rodando **Debian Bullseye**. Ele configura o Raspberry Pi para funcionar como um gateway LoRa, instalando e configurando o LoRa Packet Forwarder.
+
+## Requisitos
+
+- Raspberry Pi 3B+ com **Debian Bullseye**
+- Conexão com a internet
+- HAT e modulo concentrador Elecrow LR1302 LoRaWAN Gateway Module
+
+## Instruções de Instalação
+
+### Passo 1: Instalar o Git
+
+Caso o Git ainda não esteja instalado no seu Raspberry Pi, você pode instalá-lo executando o comando abaixo:
+
+```bash
+sudo apt update
+sudo apt install git -y
+```
+
+### Passo 2: Clonar o Repositório
+
+```bash
+git clone [https://github.com/seu_usuario/lora_pkt_fwd_setup.git](https://github.com/cesarvasco2/gateway-lora-sx1302.git)
+```
+### Passo 3: Executar o Script de Instalação
+
+```bash
+cd lora_pkt_fwd_setup
+sudo chmod +x install.sh
+sudo ./install.sh
+```
+
+### Passo 4: Verificar o Status do Serviço
+
+```bash
+systemctl status lora_pkt_fwd
+```
+### Personalização do arquivo global_conf.json
+- O arquivo de configuração global_conf.json é gerado automaticamente, mas você pode personalizá-lo para se adequar às suas necessidades. Ele está localizado em:
+
+```bash
+~/lora_pkt_fwd/lora_gateway/global_conf.json
+```
+- Edite este arquivo se for necessário alterar a configuração de canais ou outras configurações específicas do gateway.
+- Esse comando permitirá acompanhar o funcionamento do serviço em tempo real.
+```bash
+journalctl -u lora_pkt_fwd -f
+```
+
+
