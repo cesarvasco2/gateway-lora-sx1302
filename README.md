@@ -44,9 +44,13 @@ systemctl status lora_pkt_fwd
 ~/lora_pkt_fwd/lora_gateway/global_conf.json
 ```
 - Edite este arquivo se for necessário alterar a configuração de canais ou outras configurações específicas do gateway.
-- Esse comando permitirá acompanhar o funcionamento do serviço em tempo real.
+
+### Verifique os logs do sistema com:
+
 ```bash
 journalctl -u lora_pkt_fwd -f
 ```
+
+- Esse comando permitirá acompanhar o funcionamento do serviço em tempo real.
 
 
