@@ -378,6 +378,7 @@ After=multi-user.target
 User=root
 ExecStart=$packet_forwarder_dir/lora_pkt_fwd
 Restart=on-failure
+RestartSec=10
 WorkingDirectory=$packet_forwarder_dir
 
 [Install]
