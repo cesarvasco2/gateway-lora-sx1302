@@ -126,15 +126,15 @@ cat <<EOL > global_conf.json
         "com_path": "/dev/spidev0.0",
         "lorawan_public": true,
         "clksrc": 0,
-        "antenna_gain": 0, /* antenna gain, in dBi */
+        "antenna_gain": 0,
         "full_duplex": false,
         "fine_timestamp": {
             "enable": false,
-            "mode": "all_sf" /* high_capacity or all_sf */
+            "mode": "all_sf"
         },
         "sx1261_conf": {
             "spi_path": "/dev/spidev0.1",
-            "rssi_offset": 0, /* dB */
+            "rssi_offset": 0,
             "spectral_scan": {
                 "enable": false,
                 "freq_start": 903900000,
@@ -143,7 +143,7 @@ cat <<EOL > global_conf.json
                 "pace_s": 10
             },
             "lbt": {
-                "enable": false /* LBT for 500 Khz channels is not supported */
+                "enable": false
             }
         },
         "radio_0": {
@@ -151,27 +151,97 @@ cat <<EOL > global_conf.json
             "type": "SX1250",
             "freq": 904300000,
             "rssi_offset": -215.4,
-            "rssi_tcomp": {"coeff_a": 0, "coeff_b": 0, "coeff_c": 20.41, "coeff_d": 2162.56, "coeff_e": 0},
+            "rssi_tcomp": {
+                "coeff_a": 0,
+                "coeff_b": 0,
+                "coeff_c": 20.41,
+                "coeff_d": 2162.56,
+                "coeff_e": 0
+            },
             "tx_enable": true,
             "tx_freq_min": 923000000,
             "tx_freq_max": 928000000,
-            "tx_gain_lut":[
-                {"rf_power": 12, "pa_gain": 0, "pwr_idx": 15},
-                {"rf_power": 13, "pa_gain": 0, "pwr_idx": 16},
-                {"rf_power": 14, "pa_gain": 0, "pwr_idx": 17},
-                {"rf_power": 15, "pa_gain": 0, "pwr_idx": 19},
-                {"rf_power": 16, "pa_gain": 0, "pwr_idx": 20},
-                {"rf_power": 17, "pa_gain": 0, "pwr_idx": 22},
-                {"rf_power": 18, "pa_gain": 1, "pwr_idx": 1},
-                {"rf_power": 19, "pa_gain": 1, "pwr_idx": 2},
-                {"rf_power": 20, "pa_gain": 1, "pwr_idx": 3},
-                {"rf_power": 21, "pa_gain": 1, "pwr_idx": 4},
-                {"rf_power": 22, "pa_gain": 1, "pwr_idx": 5},
-                {"rf_power": 23, "pa_gain": 1, "pwr_idx": 6},
-                {"rf_power": 24, "pa_gain": 1, "pwr_idx": 7},
-                {"rf_power": 25, "pa_gain": 1, "pwr_idx": 9},
-                {"rf_power": 26, "pa_gain": 1, "pwr_idx": 11},
-                {"rf_power": 27, "pa_gain": 1, "pwr_idx": 14}
+            "tx_gain_lut": [
+                {
+                    "rf_power": 12,
+                    "pa_gain": 0,
+                    "pwr_idx": 15
+                },
+                {
+                    "rf_power": 13,
+                    "pa_gain": 0,
+                    "pwr_idx": 16
+                },
+                {
+                    "rf_power": 14,
+                    "pa_gain": 0,
+                    "pwr_idx": 17
+                },
+                {
+                    "rf_power": 15,
+                    "pa_gain": 0,
+                    "pwr_idx": 19
+                },
+                {
+                    "rf_power": 16,
+                    "pa_gain": 0,
+                    "pwr_idx": 20
+                },
+                {
+                    "rf_power": 17,
+                    "pa_gain": 0,
+                    "pwr_idx": 22
+                },
+                {
+                    "rf_power": 18,
+                    "pa_gain": 1,
+                    "pwr_idx": 1
+                },
+                {
+                    "rf_power": 19,
+                    "pa_gain": 1,
+                    "pwr_idx": 2
+                },
+                {
+                    "rf_power": 20,
+                    "pa_gain": 1,
+                    "pwr_idx": 3
+                },
+                {
+                    "rf_power": 21,
+                    "pa_gain": 1,
+                    "pwr_idx": 4
+                },
+                {
+                    "rf_power": 22,
+                    "pa_gain": 1,
+                    "pwr_idx": 5
+                },
+                {
+                    "rf_power": 23,
+                    "pa_gain": 1,
+                    "pwr_idx": 6
+                },
+                {
+                    "rf_power": 24,
+                    "pa_gain": 1,
+                    "pwr_idx": 7
+                },
+                {
+                    "rf_power": 25,
+                    "pa_gain": 1,
+                    "pwr_idx": 9
+                },
+                {
+                    "rf_power": 26,
+                    "pa_gain": 1,
+                    "pwr_idx": 11
+                },
+                {
+                    "rf_power": 27,
+                    "pa_gain": 1,
+                    "pwr_idx": 14
+                }
             ]
         },
         "radio_1": {
@@ -179,53 +249,116 @@ cat <<EOL > global_conf.json
             "type": "SX1250",
             "freq": 905000000,
             "rssi_offset": -215.4,
-            "rssi_tcomp": {"coeff_a": 0, "coeff_b": 0, "coeff_c": 20.41, "coeff_d": 2162.56, "coeff_e": 0},
+            "rssi_tcomp": {
+                "coeff_a": 0,
+                "coeff_b": 0,
+                "coeff_c": 20.41,
+                "coeff_d": 2162.56,
+                "coeff_e": 0
+            },
             "tx_enable": false
         },
-        "chan_multiSF_All": {"spreading_factor_enable": [ 5, 6, 7, 8, 9, 10, 11, 12 ]},
-        "chan_multiSF_0": {"enable": true, "radio": 0, "if": -400000},  /* Freq : 903.9 MHz*/
-        "chan_multiSF_1": {"enable": true, "radio": 0, "if": -200000},  /* Freq : 904.1 MHz*/
-        "chan_multiSF_2": {"enable": true, "radio": 0, "if":  0},       /* Freq : 904.3 MHz*/
-        "chan_multiSF_3": {"enable": true, "radio": 0, "if":  200000},  /* Freq : 904.5 MHz*/
-        "chan_multiSF_4": {"enable": true, "radio": 1, "if": -300000},  /* Freq : 904.7 MHz*/
-        "chan_multiSF_5": {"enable": true, "radio": 1, "if": -100000},  /* Freq : 904.9 MHz*/
-        "chan_multiSF_6": {"enable": true, "radio": 1, "if":  100000},  /* Freq : 905.1 MHz*/
-        "chan_multiSF_7": {"enable": true, "radio": 1, "if":  300000},  /* Freq : 905.3 MHz*/
-        "chan_Lora_std":  {"enable": true, "radio": 0, "if":  300000, "bandwidth": 500000, "spread_factor": 8,     >                           "implicit_hdr": false, "implicit_payload_length": 17, "implicit_crc_en": false, "implici>        "chan_FSK":       {"enable": false, "radio": 1, "if":  300000, "bandwidth": 125000, "datarate": 50000}     >    },
-
+        "chan_multiSF_All": {
+            "spreading_factor_enable": [
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ]
+        },
+        "chan_multiSF_0": {
+            "enable": true,
+            "radio": 0,
+            "if": -400000
+        },
+        "chan_multiSF_1": {
+            "enable": true,
+            "radio": 0,
+            "if": -200000
+        },
+        "chan_multiSF_2": {
+            "enable": true,
+            "radio": 0,
+            "if": 0
+        },
+        "chan_multiSF_3": {
+            "enable": true,
+            "radio": 0,
+            "if": 200000
+        },
+        "chan_multiSF_4": {
+            "enable": true,
+            "radio": 1,
+            "if": -300000
+        },
+        "chan_multiSF_5": {
+            "enable": true,
+            "radio": 1,
+            "if": -100000
+        },
+        "chan_multiSF_6": {
+            "enable": true,
+            "radio": 1,
+            "if": 100000
+        },
+        "chan_multiSF_7": {
+            "enable": true,
+            "radio": 1,
+            "if": 300000
+        },
+        "chan_Lora_std": {
+            "enable": true,
+            "radio": 0,
+            "if": 300000,
+            "bandwidth": 500000,
+            "spread_factor": 8,
+            "implicit_hdr": false,
+            "implicit_payload_length": 17,
+            "implicit_crc_en": false,
+            "implicit_coderate": 1
+        },
+        "chan_FSK": {
+            "enable": false,
+            "radio": 1,
+            "if": 300000,
+            "bandwidth": 125000,
+            "datarate": 50000
+        }
+    },
     "gateway_conf": {
-        "gateway_ID": "$mac_addres",
-        /* change with default server address/ports */
+        "gateway_ID": "$mac_address",
         "server_address": "nam1.cloud.thethings.network",
         "serv_port_up": 1700,
         "serv_port_down": 1700,
-        /* adjust the following parameters for your network */
         "keepalive_interval": 10,
         "stat_interval": 30,
         "push_timeout_ms": 100,
-        /* forward only valid packets */
         "forward_crc_valid": true,
         "forward_crc_error": false,
         "forward_crc_disabled": false,
-        /* GPS configuration */
         "gps_tty_path": "/dev/ttyS0",
-        /* GPS reference coordinates */
-        "ref_latitude": 0.0,
-        "ref_longitude": 0.0,
+        "ref_latitude": 0,
+        "ref_longitude": 0,
         "ref_altitude": 0,
-        /* Beaconing parameters */
-        "beacon_period": 0, /* disable class B beacon */
+        "beacon_period": 0,
         "beacon_freq_hz": 869525000,
         "beacon_datarate": 9,
         "beacon_bw_hz": 125000,
         "beacon_power": 14,
         "beacon_infodesc": 0
     },
-
     "debug_conf": {
-        "ref_payload":[
-            {"id": "0xCAFE1234"},
-            {"id": "0xCAFE2345"}
+        "ref_payload": [
+            {
+                "id": "0xCAFE1234"
+            },
+            {
+                "id": "0xCAFE2345"
+            }
         ],
         "log_file": "loragw_hal.log"
     }
