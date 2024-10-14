@@ -28,7 +28,7 @@ git clone https://github.com/cesarvasco2/gateway-lora-sx1302.git
 ### Passo 3: Executar o Script de Instalação
 
 ```bash
-cd lora_pkt_fwd_setup
+cd gateway-lora-sx1302
 sudo chmod +x install.sh
 sudo ./install.sh
 ```
