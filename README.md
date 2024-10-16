@@ -54,4 +54,14 @@ journalctl -u lora_pkt_fwd -f
 
 - Esse comando permitirá acompanhar o funcionamento do serviço em tempo real.
 
+### Verificar a atividade em uma porta serial (GPS)
+```bash
+cat /dev/ttyS0
+```
 
+- Caso de tenha algum problema 
+
+```bash
+sudo systemctl stop serial-getty@ttyS0.service
+sudo systemctl disable serial-getty@ttyS0.service
+```
