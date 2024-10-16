@@ -51,10 +51,10 @@ systemctl status lora_pkt_fwd
 ```bash
 journalctl -u lora_pkt_fwd -f
 ```
-
 - Esse comando permitirá acompanhar o funcionamento do serviço em tempo real.
 
-### Verificar a atividade em uma porta serial (GPS)
+### Verificar a atividade porta serial que está conectada ao (GPS)
+
 ```bash
 cat /dev/ttyS0
 ```
